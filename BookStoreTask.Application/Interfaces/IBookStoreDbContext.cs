@@ -9,7 +9,7 @@ namespace BookStoreTask.Application.Interfaces
 {
     public interface IBookStoreDbContext
     {
-        DbSet<Book> Books { get; set; }
+        DbSet<BookStoreTask.Domain.Entities.Book> Books { get; set; }
         Task<int> SaveChangesAsync(CancellationToken cancellationToken);
     }
 }

@@ -1,16 +1,14 @@
 ﻿using AutoMapper;
 using BookStoreTask.Application.Common.Mappings;
-using BookStoreTask.Domain.Entities;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Linq; 
 
-namespace BookStoreTask.Application.Book.Queries.GetBookInfo
+namespace BookStoreTask.Application.Book.Queries.GetBookList
 {
-    public class BookInfoVm : IMapWith<BookStoreTask.Domain.Entities.Book>
+    public class BookLookupDto : IMapWith<BookStoreTask.Domain.Entities.Book>
     {
+        public int Id { get; set; }
         public string? Title { get; set; }
         public string? Genre { get; set; }
         public string? Author { get; set; }
@@ -19,7 +17,9 @@ namespace BookStoreTask.Application.Book.Queries.GetBookInfo
 
         public void Mapping(Profile profile)
         {
-            profile.CreateMap<BookStoreTask.Domain.Entities.Book, BookInfoVm>();
+            profile.CreateMap<BookStoreTask.Domain.Entities.Book, BookLookupDto>();
         }
+
+
     }
 }
