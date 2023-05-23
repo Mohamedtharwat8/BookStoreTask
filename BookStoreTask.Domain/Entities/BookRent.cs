@@ -1,9 +1,11 @@
 ﻿using BookStoreTask.Domain.Common;
+using System.ComponentModel.DataAnnotations;
 
 namespace BookStoreTask.Domain.Entities
 {
     public class BookRent : AuditableEntity
     {
+        [Key]
         public Guid BookId { get; set; }
         public string Name { get; set; } = string.Empty;
         public int Price { get; set; }
